@@ -1,3 +1,4 @@
+var score = 0
 // checking Work Time >= Rest Time on button click
 function checkTime() {
     const workTime = document.getElementById('work-time').value;
@@ -33,7 +34,9 @@ function Timer(time) {
       --seconds;
       if (seconds === 0 && minutes === 0) {
         clearInterval(intervalId);
-        alert('your timer is done')
+        alert('your timer is done');
+        updateScore()
+
       }
     }, 1_000);
 };
@@ -47,4 +50,9 @@ function openOptions() {
     window.open(
         "chrome-extension://oojahmdaikikigienmfojkpnadnfmbak/options.html", "_blank");
 }
+
+function updateScore () {
+    score += 30;
+    scoretext.setText('score: '+ score);
+  }
 
