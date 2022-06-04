@@ -6,8 +6,19 @@
 //     this.count = +sessionStorage.count;
 //   }
 // initialize score
-var score = Number(document.getElementById('score'))
-sessionStorage.setItem("score", score)
+// var score = Number(document.getElementById('score'))
+// if (sessionStorage.getItem("score") === undefined) {
+//     sessionStorage.setItem("score", score)
+// }
+chrome.runtime.onInstalled.addListener(function () {
+    chrome.storage.sync.get("score")
+    // , function () {
+    //     chrome.storage.sync.set({key: value}, function() {
+    //         console.log('Value is set to ' + value);
+    //       });
+    // });
+  });
+
 // sc = new SessionCounter;
 // score.textContent = sc.count;
 
