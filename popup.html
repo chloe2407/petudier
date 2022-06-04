@@ -7,8 +7,38 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- SET TIMER -->
+    <div id="set-timer">
+        <body class="title">Work Timer</body>
+        <input type="number" id="work-time" required min="1">
+        <body class="min">min</body>
+        <br/>
+        <br/>
+        <body class="title">Rest Timer</body>
+        <input type="number" id="rest-time" required min="1">
+        <body class="min">min</body>
+        <p style="color: red; display: none;" id="warning1-text" >You must input a rest time smaller than your work time!</p>
+        <br/>
+        <br/>
+        <button id="set-timer-button">button</button>
+    </div>
+    
+
+    <!-- TIMER ON -->
+    <div id="timer-on">
+        <button id="start-timer-button">Start Timer</button>
+        <p id="timer-title">Work Timer</p>
+        <div id="timer"></div>
+    </div>
+    
+    <div id= "scoretext">
+        score: 0
+    </div> 
+
     <script type="text/javascript" src="popup.js"></script>
-    <h1>this is popup</h1>
-    <button id="button">button</button>
+    <!-- <script type="text/javascript" src="timer.js"></script> -->
+
+
 </body>
 </html>
