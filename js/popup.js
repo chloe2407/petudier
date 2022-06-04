@@ -98,7 +98,7 @@ function RestTimer() {
     }, 1000);
     document.getElementById('work-timer').innerHTML = '00:00'
 }
-
+ 
 // Button that opens popup into a new tab
 function openOptions() {
     return window.open("../html/options.html", "_blank");
