@@ -23,7 +23,10 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
 function updateScore () {
   score += 30;
   scoretext.setText('score: '+ score);
 }
+
+chrome.storage.local.set({  });
