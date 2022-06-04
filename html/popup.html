@@ -20,21 +20,33 @@
         <p style="color: red; display: none;" id="warning1-text" >You must input a rest time smaller than your work time!</p>
         <br/>
         <br/>
-        <button id="set-timer-button">button</button>
+        <button id="set-timer-button">Start Timer!</button>
     </div>
     
 
     <!-- TIMER ON -->
-    <div id="timer-on">
-        <button id="start-timer-button">Start Timer</button>
+    <div id="timer-on" style="display: none;">
         <p id="work-title">Work Timer</p>
         <div id="work-timer"></div>
         <p id="rest-title">Rest Timer</p>
         <div id="rest-timer"></div>
+        <img src="../png/work-cat.png" alt="work-cat" id="work-cat">
+        <img src="../png/rest-cat.png" alt="rest-cat" id="rest-cat" style="display: none;">
     </div>
+
+    
+    <div id= "scoretext">
+        score: 
+        <p id="score">0</p>
+    </div> 
 
     <button id="options">options</button>
 
-    <script type="text/javascript" src="js/popup.js"></script>
+    <!-- <input id='dec' type='button' value='-' />
+    <div id='test'></div>
+    <input id='inc' type='button' value='+' /> -->
+
+    <script type="text/javascript" src="../js/popup.js"></script>
+
 </body>
 </html>
