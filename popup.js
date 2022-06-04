@@ -48,11 +48,11 @@ document.getElementById('start-timer-button').addEventListener('click', Timer(do
 document.getElementById('options').addEventListener('click', openOptions);
 function openOptions() {
     window.open(
-        "chrome-extension://oojahmdaikikigienmfojkpnadnfmbak/options.html", "_blank");
+        "/options.html", "_blank");
 }
 
 function updateScore () {
     score += 30;
-    scoretext.setText('score: '+ score);
+    document.getElementById("scoretext").innerHTML = 'score: '+ score;
   }
 
