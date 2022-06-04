@@ -17,7 +17,7 @@ checkbox.addEventListener("change", (event) => {
 window.addEventListener("DOMContentLoaded", () => {
   chrome.storage.local.get(["blocked", "enabled"], function (local) {
     const { blocked, enabled } = local;
-    if (Array.isArray(blocked)) {
+    if (Array.isArray(blocked)) {   
       textarea.value = blocked.join("\n");
       checkbox.checked = enabled;
     }
@@ -28,3 +28,10 @@ function updateScore () {
   score += 30;
   scoretext.setText('score: '+ score);
 }
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
+      console.log("received");
+      chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id, "hide");  
+      });
+});

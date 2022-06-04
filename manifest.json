@@ -10,7 +10,25 @@
     "background": {
       "service_worker": "background.js"
     },
+    "content_scripts":[{
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "all_frames": true
+    },{
+        "matches": ["<all_urls>"],
+        "js": ["alert.js"]
+    }],
     "options_page": "options.html",
-    "permissions": ["tabs", "storage"]
+    "permissions": ["tabs", "storage", "activeTab"],
+    "web_accessible_resources": [
+        {
+        "resources":[
+        "pop.html"
+        ],
+        "matches":[
+            "<all_urls>"
+        ]
+        }
+    ]
   }
   
