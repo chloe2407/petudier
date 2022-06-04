@@ -48,7 +48,7 @@ document.getElementById('start-timer-button').addEventListener('click', Timer(do
 document.getElementById('options').addEventListener('click', openOptions);
 function openOptions() {
     window.open(
-        "chrome-extension://oojahmdaikikigienmfojkpnadnfmbak/options.html", "_blank");
+        "./options.html", "_blank");
 }
 
 function updateScore () {
