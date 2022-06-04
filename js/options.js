@@ -29,4 +29,3 @@ function updateScore () {
   scoretext.setText('score: '+ score);
 }
 
-chrome.storage.local.set({  });
