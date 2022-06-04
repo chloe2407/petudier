@@ -4,26 +4,26 @@
     "description": "this is the description",
     "version": "1.0",
     "action": {
-      "default_icon": "icon.png",
-      "default_popup": "popup.html"
+      "default_icon": "png/icon.png",
+      "default_popup": "html/popup.html"
     },
     "background": {
       "service_worker": "js/background.js"
     },
     "content_scripts":[{
         "matches": ["<all_urls>"],
-        "js": ["contentScript.js"],
+        "js": ["js/contentScript.js"],
         "all_frames": true
     },{
         "matches": ["<all_urls>"],
-        "js": ["alert.js"]
+        "js": ["js/alert.js"]
     }],
-    "options_page": "options.html",
+    "options_page": "html/options.html",
     "permissions": ["tabs", "storage", "activeTab"],
     "web_accessible_resources": [
         {
         "resources":[
-        "pop.html"
+        "html/pop.html"
         ],
         "matches":[
             "<all_urls>"
