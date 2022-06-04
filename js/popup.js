@@ -1,4 +1,3 @@
-
 // checking Work Time >= Rest Time on button click
 function checkTime() {
     const workTime = document.getElementById('work-time').value;
@@ -34,8 +33,7 @@ function Timer(type, time) {
       --seconds;
       if (seconds < 0 || minutes < 0) {
         clearInterval(intervalId);
-        // alert('your timer is done');
-        updateScore()
+        updateScore();
       }
     }, 1000);
 };
@@ -51,49 +49,19 @@ function RestTimer() {
     document.getElementById('work-timer').innerHTML = '00:00'
 }
 
-// function AllTimer() {
-
-//     while (workTimerDone !== true && restTimerDone !== true) {
-//         WorkTimer()
-//         console.log('hi')
-//         if (workTimerDone) {
-//             RestTimer()
-//             restTimerDone = true
-//         } else {
-//             console.log('here')
-//         }
-//         workTimerDone = true
-
-//     }
-//     WorkTimer()
-//     workTimerDone = true;
-// }
-
 document.getElementById('start-timer-button').addEventListener('click', WorkTimer);
 
-// if (workTimerDone === true) {
-//     console.log('here')
-//     document.getElementById('start-timer-button').addEventListener('click', RestTimer);
-// }
-// else {
-//     document.getElementById('start-timer-button').innerHTML = 'Start Work Timer'
-//     document.getElementById('timer-title').innerHTML = 'Work Timer'
-//     document.getElementById('start-timer-button').addEventListener('click', WorkTimer);
-
-// }
-
-
+// options button
 function openOptions() {
     return window.open("./options.html", "_blank");
 }
 document.getElementById("options").addEventListener('click', openOptions);
 
-
-var score = 0
-// const scoretext = document.getElementById("scoretext");
-
-function updateScore () {
-    score += 30;
-    scoretext.innerHTML = 'score: '+ score;
-  }
+// score counter 
+var score = 0;
+var x = 10;
+function updateScore() {
+    score += x;
+    document.getElementById("score").innerHTML = "score: " + score
+}
 
