@@ -1,5 +1,4 @@
 // checking Work Time >= Rest Time on button click
-
 function checkTime() {
     const workTime = document.getElementById('work-time').value;
     const restTime = document.getElementById('rest-time').value;
@@ -43,9 +42,9 @@ document.getElementById('start-timer-button').addEventListener('click', Timer(do
 document.getElementById('start-timer-button').innerHTML = 'Start Rest Timer';
 document.getElementById('start-timer-button').addEventListener('click', Timer(document.getElementById('rest-time').value));
 
-
-
-
-
-
+document.getElementById('options').addEventListener('click', openOptions);
+function openOptions() {
+    window.open(
+        "chrome-extension://oojahmdaikikigienmfojkpnadnfmbak/options.html", "_blank");
+}
 

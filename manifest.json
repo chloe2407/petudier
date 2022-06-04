@@ -2,14 +2,15 @@
     "manifest_version": 3,
     "name": "Petudier",
     "description": "this is the description",
-    "version": "0.1",
+    "version": "1.0",
     "action": {
       "default_icon": "icon.png",
       "default_popup": "popup.html"
     },
-    "permissions": [
-      "tabs",
-      "storage"
-    ]
+    "background": {
+      "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "permissions": ["tabs", "storage"]
   }
   
