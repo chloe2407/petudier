@@ -1,7 +1,7 @@
 const init = function(){
 	var popup = document.createElement('iframe');
 	console.log("test1:");
-	popup.src = chrome.runtime.getURL('pop.html');
+	popup.src = chrome.runtime.getURL('html/pop.html');
 	popup.setAttribute("id","pop")
     popup.style.cssText = 'position:fixed;top:10;left:10;display:block;' +
                            'width:300px;height:10%;z-index:1000;background-color: white;';

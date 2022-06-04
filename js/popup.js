@@ -10,14 +10,14 @@
 // if (sessionStorage.getItem("score") === undefined) {
 //     sessionStorage.setItem("score", score)
 // }
-chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.sync.get("score")
-    // , function () {
-    //     chrome.storage.sync.set({key: value}, function() {
-    //         console.log('Value is set to ' + value);
-    //       });
-    // });
-  });
+// chrome.runtime.onInstalled.addListener(function () {
+//     chrome.storage.sync.get("score")
+//     // , function () {
+//     //     chrome.storage.sync.set({key: value}, function() {
+//     //         console.log('Value is set to ' + value);
+//     //       });
+//     // });
+//   });
 
 // sc = new SessionCounter;
 // score.textContent = sc.count;
@@ -101,7 +101,7 @@ function RestTimer() {
 
 // Button that opens popup into a new tab
 function openOptions() {
-    return window.open("./options.html", "_blank");
+    return window.open("../html/options.html", "_blank");
 }
 document.getElementById("options").addEventListener('click', openOptions);
 
