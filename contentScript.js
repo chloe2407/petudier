@@ -7,6 +7,12 @@ const init = function(){
                            'width:300px;height:10%;z-index:1000;background-color: white;';
 
 	document.body.appendChild(popup);
+	
+	chrome.runtime.onMessage.addListener(function(message, sender, sendResponse){
+		console.log("cs received");
+		document.getElementById("pop").style.visibility = "hidden";
+		console.log("hidden");
+	});
 	//popup.addEventListener('load',()=>{
 	//	console.log('test:');
 	//	console.log(popup,popup.contentWindow.document, popup.contentWindow.document.querySelector("button"));
