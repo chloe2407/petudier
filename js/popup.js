@@ -1,3 +1,15 @@
+//  remember the session
+// SessionCounter = function(init = 0){
+//     if(sessionStorage.count === undefined){
+//       sessionStorage.count = init;
+//     }
+//     this.count = +sessionStorage.count;
+//   }
+// initialize score
+var score = Number(document.getElementById('score'))
+sessionStorage.setItem("score", score)
+// sc = new SessionCounter;
+// score.textContent = sc.count;
 
 // checking Work Time >= Rest Time on button click
 function checkTime() {
@@ -14,19 +26,29 @@ function checkTime() {
     // VALID
     else {
         document.getElementById("set-timer").style.display = "none";
+        document.getElementById("timer-on").style.display = "block";
     } 
+    timerOn = true
+    WorkTimer()
     return 
 }
-document.getElementById('set-timer-button').addEventListener('click', checkTime);
+document.getElementById("set-timer-button").addEventListener("click", checkTime)   
+
+
+function updateScore () {
+    score += 30;
+    document.getElementById("score").innerHTML = score;
+}
 
 // TIMER
 
-function Timer(type, time) {
-    let minutes = time
+function WorkTimer() {
+
+    let minutes = document.getElementById('work-time').value
     let seconds = 0;
   
     const intervalId = setInterval(() => {
-      document.getElementById(type + '-timer').textContent = `${minutes < 1 ? 0 : ''}${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
+      document.getElementById('work-timer').textContent = `${minutes < 1 ? 0 : ''}${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
       if (seconds === 0 && minutes !== 0) {
             seconds = 60;
             --minutes;
@@ -36,64 +58,47 @@ function Timer(type, time) {
         clearInterval(intervalId);
         // alert('your timer is done');
         updateScore()
+        RestTimer()
       }
     }, 1000);
-};
-var workTimerDone = false;
-var restTimerDone = false;
-
-function WorkTimer() {
-    Timer('work', document.getElementById('work-time').value)
     document.getElementById('rest-timer').innerHTML = document.getElementById('rest-time').value + ':00'
 }
 function RestTimer() {
-    Timer('rest', document.getElementById('rest-time').value)
+    document.getElementById("work-cat").style.display = "none";
+    document.getElementById("rest-cat").style.display = "block";
+
+    let minutes = document.getElementById('rest-time').value
+    let seconds = 0;
+  
+    const intervalId = setInterval(() => {
+      document.getElementById('rest-timer').textContent = `${minutes < 1 ? 0 : ''}${minutes}:${seconds < 10 ? 0 : ''}${seconds}`;
+      if (seconds === 0 && minutes !== 0) {
+            seconds = 60;
+            --minutes;
+      }
+      --seconds;
+      if (seconds < 0 || minutes < 0) {
+        clearInterval(intervalId);
+        alert('your timer is done');
+        document.getElementById("timer-on").style.display = "none";
+        document.getElementById("set-timer").style.display = "block";
+
+      }
+    }, 1000);
     document.getElementById('work-timer').innerHTML = '00:00'
 }
 
-// function AllTimer() {
-
-//     while (workTimerDone !== true && restTimerDone !== true) {
-//         WorkTimer()
-//         console.log('hi')
-//         if (workTimerDone) {
-//             RestTimer()
-//             restTimerDone = true
-//         } else {
-//             console.log('here')
-//         }
-//         workTimerDone = true
-
-//     }
-//     WorkTimer()
-//     workTimerDone = true;
-// }
-
-document.getElementById('start-timer-button').addEventListener('click', WorkTimer);
-
-// if (workTimerDone === true) {
-//     console.log('here')
-//     document.getElementById('start-timer-button').addEventListener('click', RestTimer);
-// }
-// else {
-//     document.getElementById('start-timer-button').innerHTML = 'Start Work Timer'
-//     document.getElementById('timer-title').innerHTML = 'Work Timer'
-//     document.getElementById('start-timer-button').addEventListener('click', WorkTimer);
-
-// }
-
-
+// Button that opens popup into a new tab
 function openOptions() {
     return window.open("./options.html", "_blank");
 }
 document.getElementById("options").addEventListener('click', openOptions);
 
 
-var score = 0
+// Score
+// var score = 0
 // const scoretext = document.getElementById("scoretext");
 
-function updateScore () {
-    score += 30;
-    scoretext.innerHTML = 'score: '+ score;
-  }
+
+
 
