@@ -2,23 +2,23 @@
 // var workTimer = false
 // var restTimer = false
 
-if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
-    console.info( "This page is reloaded" );
-    console.log(localStorage.getItem("workTimer"))
-    // reload happened during rest timer
-    if (localStorage.getItem("workTimer") === 'true' && localStorage.getItem("restTimer") === 'true') {
-        console.log('restarting rest timer')
-        RestTimer();
-    } else if (localStorage.getItem("workTimer") === 'true') {
-    // reload happened during work timer
-        console.log('restarting work timer')
-        WorkTimer();
-    }
-} 
-else
-{
-    console.info( "This page is not reloaded");
-}
+// if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+//     console.info( "This page is reloaded" );
+//     console.log(localStorage.getItem("workTimer"))
+//     // reload happened during rest timer
+//     if (localStorage.getItem("workTimer") === 'true' && localStorage.getItem("restTimer") === 'true') {
+//         console.log('restarting rest timer')
+//         RestTimer();
+//     } else if (localStorage.getItem("workTimer") === 'true') {
+//     // reload happened during work timer
+//         console.log('restarting work timer')
+//         WorkTimer();
+//     }
+// } 
+// else
+// {
+//     console.info( "This page is not reloaded");
+// }
 
 
 function timerOnDisplay() {
