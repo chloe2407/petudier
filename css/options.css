@@ -1,3 +1,11 @@
 body {
-    background-color: lightblue;
+    background-color: #ECD3BF;
+
 }
+
+h1 {
+    border-radius: 5px;
+    margin: 25px 100px 75px 100px;
+    padding: 50px 100px 50px 100px;
+    background: white url(../png/icon.png) no-repeat 75% 50%;
+  }
