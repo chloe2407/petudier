@@ -105,7 +105,11 @@ function WorkTimer() {
       if (seconds < 0 || minutes < 0) {
         // alert('your work timer is done');
         clearInterval(intervalId);
-
+        
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+            chrome.tabs.sendMessage(tabs[0].id, "show");  
+        });
+		
         updateScore()
         localStorage.setItem("restTimer", true);
         RestTimer()
