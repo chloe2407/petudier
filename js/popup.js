@@ -45,10 +45,13 @@ function checkTime() {
 }
 document.getElementById("set-timer-button").addEventListener("click", checkTime)   
 
-
+// updates score
+var score = 0
 function updateScore () {
     score += 30;
     document.getElementById("score").innerHTML = score;
+    const scores = [score.toString()]
+    chrome.storage.local.set({ scores });
 }
 
 // TIMER
@@ -67,7 +70,6 @@ function WorkTimer() {
       --seconds;
       if (seconds < 0 || minutes < 0) {
         clearInterval(intervalId);
-        // alert('your timer is done');
         updateScore()
         RestTimer()
       }
@@ -104,12 +106,6 @@ function openOptions() {
     return window.open("../html/options.html", "_blank");
 }
 document.getElementById("options").addEventListener('click', openOptions);
-
-
-// Score
-// var score = 0
-// const scoretext = document.getElementById("scoretext");
-
 
 
 
