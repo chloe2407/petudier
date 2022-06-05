@@ -2,22 +2,26 @@
 <html>
 <head>
 <link rel="stylesheet" href="/css/options.css">
+<link rel="stylesheet" href="../css/petu.css">
 <title>Petudier</title>
 </head>
 <body>
 
-<h1 class="hidden" >Petudier!</h1>
+<h1 class="hidden" style="font-family: 'Comic', sans-serif;">Petudier!</h1>
+<div class="inbox">
+<p>Enter Website Urls you wish to be blocked! <br> Each new line should be a new url</p>
 <textarea id="textarea" rows="10" cols="30" spellcheck="false"></textarea>
 <br>
 
 <button id="save">Save</button>
-<strong>Enabled?</strong><input id="checkbox" type="checkbox">
+<strong>Enable Website Blocking?</strong><input id="checkbox" type="checkbox">
+
 <br><br>
 <!-- score -->
 <textarea id="score" rows="1" cols="30" spellcheck="false">score: 0</textarea>
 <br>
 <button id="scoreButton">What's my score?</button>
-
+</div>
 <script src="../js/options.js"></script>
 <script type="text/javascript" src="../js/popup.js"></script> 
 
