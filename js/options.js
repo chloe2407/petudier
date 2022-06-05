@@ -24,7 +24,7 @@ save.addEventListener("click", () => {
 checkbox.addEventListener("change", (event) => {
   const enabled = event.target.checked;
   chrome.storage.local.set({ enabled });
-});
+}); 
 
 window.addEventListener("DOMContentLoaded", () => {
   // displaying blocked websites
