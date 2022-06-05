@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/petu.css">
+</head>
+<body>
+    <!-- SET TIMER -->
+<<<<<<< HEAD
+    <div id="set-timer">
+        <img src="../png/icon.png"><br/>
+=======
+    <div id="set-timer" style="font-family: 'Comic', sans-serif;">
+>>>>>>> Popup-based-on-timer
+        <body class="title">Work Timer</body>
+        <input type="number" id="work-time" required min="1">
+        <body class="min">min</body>
+        <br/>
+        <br/>
+        <body class="title">Rest Timer</body>
+        <input type="number" id="rest-time" required min="1">
+        <body class="min">min</body>
+        <p style="color: red; display: none;" id="warning1-text" >You must input a VALID rest time smaller than your work time!</p>
+        <br/>
+        <br/>
+        <button id="set-timer-button">Start Timer!</button>
+    </div>
+    
+
+    <!-- TIMER ON -->
+    <div id="timer-on" style="display: none;font-family: 'Comic', sans-serif;">
+        <p id="work-title">Work Timer</p>
+        <div id="work-timer"></div>
+        <p id="rest-title">Rest Timer</p>
+        <div id="rest-timer"></div>
+        <img src="../png/work-cat.png" alt="work-cat" id="work-cat">
+        <img src="../png/rest-cat.png" alt="rest-cat" id="rest-cat" style="display: none;">
+    </div>
+
+
+    <!-- score -->
+    <div id = "score">score: 0</div> 
+
+    <button id="options">options</button>
+    <button id="reset">RESET</button>
+
+
+    <script type="text/javascript" src="../js/popup.js"></script>
+
+</body>
+</html>
