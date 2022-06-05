@@ -1,0 +1,82 @@
+@font-face{
+	font-family: 'Comic';
+	src: url('BadComic.ttf');
+}
+
+:root{
+	--clr-pink-light: #ffded7;
+	--clr-pink-dark: #ffd0cc;
+}
+
+body{
+	margin-bottom: 100px;
+}
+.title{
+	text-align: center;
+	float: center;
+	background-color: var(--clr-pink-dark);
+	
+	border: 10px solid;
+	border-radius:  3.5em;
+	border-style: solid;
+	border-color: var(--clr-pink-light);
+	
+	width: clamp(200px, 90%, 90%);
+	margin-inline: auto;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	
+	padding: 5px;
+	
+	font-family: 'Comic', sans-serif;
+	font-size: clamp(.5rem, 2rem, 3rem);
+}
+
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+  margin: 50px;
+}
+
+.rbox{
+	float:center;
+	width: 60%;
+	
+	margin: .5em 25% .5em;
+}
+
+.column{
+	font-family: 'Comic', sans-serif;
+	float: left;
+	width: 50%;
+
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	text-align: center;
+	font-family: 'Comic', sans-serif;
+
+}
+
+
+.title h1,
+.title p{
+	color: white;
+}
+
+.column h3{
+	font-size: 2.5em
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
