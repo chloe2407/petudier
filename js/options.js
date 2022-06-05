@@ -14,7 +14,7 @@ scoreButton.addEventListener("click", () => {
   const scores = score.value.split("\n").map(s => s.trim()).filter(Boolean);
   chrome.storage.local.set({ scores });
 });
-
+ 
 // saving blocked websites
 save.addEventListener("click", () => {
   const blocked = textarea.value.split("\n").map(s => s.trim()).filter(Boolean);
