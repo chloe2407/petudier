@@ -1,0 +1,14 @@
+@font-face{
+	font-family: 'Comic';
+	src: url('BadComic.ttf');
+}
+
+:root{
+	--clr-pink-light: #ffded7;
+	--clr-pink-dark: #ffd0cc;
+}
+
+.fonted{
+	font-family: 'Comic', sans-serif;
+}
+
